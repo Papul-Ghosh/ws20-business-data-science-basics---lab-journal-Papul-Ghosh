@@ -606,6 +606,7 @@ sales_by_state_year_tbl %&gt;%
 <p><img src="journal_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 </div>
 </div>
+
 <div id="challenge-2-data-acquisition" class="section level1" number="2">
 <h1 number="2"><span class="header-section-number">2</span> Challenge 2: Data Acquisition</h1>
 <p>Last compiled: 2020-12-04</p>
@@ -621,59 +622,7 @@ getcontent &lt;- get_reddit(
   page_threshold = 1,
   cn_threshold =10000
 )</code></pre>
-<pre><code>## 
-  |                                                                            
-  |                                                                      |   0%
-  |                                                                            
-  |===                                                                   |   4%
-  |                                                                            
-  |======                                                                |   8%
-  |                                                                            
-  |========                                                              |  12%
-  |                                                                            
-  |===========                                                           |  16%
-  |                                                                            
-  |==============                                                        |  20%
-  |                                                                            
-  |=================                                                     |  24%
-  |                                                                            
-  |====================                                                  |  28%
-  |                                                                            
-  |======================                                                |  32%
-  |                                                                            
-  |=========================                                             |  36%
-  |                                                                            
-  |============================                                          |  40%
-  |                                                                            
-  |===============================                                       |  44%
-  |                                                                            
-  |==================================                                    |  48%
-  |                                                                            
-  |====================================                                  |  52%
-  |                                                                            
-  |=======================================                               |  56%
-  |                                                                            
-  |==========================================                            |  60%
-  |                                                                            
-  |=============================================                         |  64%
-  |                                                                            
-  |================================================                      |  68%
-  |                                                                            
-  |==================================================                    |  72%
-  |                                                                            
-  |=====================================================                 |  76%
-  |                                                                            
-  |========================================================              |  80%
-  |                                                                            
-  |===========================================================           |  84%
-  |                                                                            
-  |==============================================================        |  88%
-  |                                                                            
-  |================================================================      |  92%
-  |                                                                            
-  |===================================================================   |  96%
-  |                                                                            
-  |======================================================================| 100%</code></pre>
+
 <pre class="r"><code>getnews&lt;- getcontent %&gt;%
   select(id, post_date, num_comments , user, comment, title, URL)
 
@@ -796,9 +745,12 @@ bike_tbl</code></pre>
 ## 9     9 &quot;\nSOUL FIRE\n&quot;    &quot;\nab 2.149,00~ &quot;\nab 44,50 € mtl. / Dienstrad-Leasi~</code></pre>
 </div>
 </div>
+
+
 <div id="challenge-3-data-wrangling" class="section level1" number="3">
 <h1 number="3"><span class="header-section-number">3</span> Challenge 3: Data Wrangling</h1>
 <p>Last compiled: 2020-12-04</p>
+
 <div id="challenge-3.1" class="section level2" number="3.1">
 <h2 number="3.1"><span class="header-section-number">3.1</span> Challenge 3.1:</h2>
 <p>Patent Dominance: What US company / corporation has the most patents? List the 10 US companies with the most assigned/granted patents.</p>
@@ -1101,8 +1053,19 @@ top_org_tbl &lt;- top_org_tbl %&gt;%
   slice(1:5)
 
 top_org_tbl</code></pre>
-<p>#Challenge 4: Data Visualisation</p>
+
+</div>
+</div>
+
+
+
+
+<div id="Challenge 4: Data Visualisation" class="section level1" number="4">
+<h1 number="4"><span class="header-section-number">4</span> Challenge 4: Data Visualisation</h1>
 <p>Last compiled: 2020-12-04</p>
+<div id="challenge-4.1" class="section level2" number="4.1">
+<h2 number="4.1"><span class="header-section-number">4.1</span> Challenge 4.1</h2>
+
 <pre class="r"><code>#Challenge 4.1:
 
 #1.0 Loading Libraries ----
@@ -1167,7 +1130,13 @@ covid_data_monthly_tbl %&gt;%    ggplot(aes(x = date(dateRep), y = cum_cases, co
                         fill  = &quot;#1f78b4&quot;,
                         color = &quot;white&quot;,
                         fontface = &quot;italic&quot;)</code></pre>
+
+
 <p><img src="journal_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+</div>
+<div id="challenge-4.2" class="section level2" number="4.2">
+<h2 number="4.2"><span class="header-section-number">4.2</span> Challenge 4.2</h2>
+
 <pre class="r"><code>#Challenge 4.2:
 
 #Wrangling Data
@@ -1209,8 +1178,23 @@ ggplot(plot_data, aes(fill = death_rate)) +
   )</code></pre>
 <p><img src="journal_files/figure-html/unnamed-chunk-8-2.png" width="672" /></p>
 <p>Thank you very much</p>
+
+
 </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
