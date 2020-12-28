@@ -585,25 +585,25 @@ sales_by_state_year_tbl</code></pre>
 sales_by_state_year_tbl %&gt;%
   
   # Set up x, y, fill
-  ggplot(aes(x = state, y = sales, fill = year)) +
+  ggplot(aes(x = year, y = sales, fill = state)) +
   
   # Geometries
   geom_col() + # Run up to here to get a stacked bar plot
   
   # Facet
-  facet_wrap(~ year) +
+  facet_wrap(~ state, ncol=4) +
   
   # Formatting
   scale_y_continuous(labels = scales::dollar_format(big.mark = &quot;.&quot;, 
-                                                    decimal.mark = &quot;,&quot;, 
+                                                    decimal.mark = &quot;.&quot;, 
                                                     prefix = &quot;&quot;, 
                                                    suffix = &quot; €&quot;)) +
   labs(
-    title = &quot;Revenue by year and state&quot;,
+    title = &quot;Revenue by year and location&quot;,
     #subtitle = &quot;Each product category has an upward trend&quot;,
-    fill = &quot;Year&quot; # Changes the legend name
+    fill = &quot;State&quot; # Changes the legend name
   )</code></pre>
-<p><img src="journal_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="journal_files/figure-html/unnamed-chunk-2-2.png" width="672" /></p>
 </div>
 </div>
 
@@ -734,15 +734,15 @@ bike_tbl</code></pre>
 <pre><code>## # A tibble: 9 x 4
 ##      id Model              Price           Installment                          
 ##   &lt;int&gt; &lt;chr&gt;              &lt;chr&gt;           &lt;chr&gt;                                
-## 1     1 &quot;\nGROUND CONTROL~ &quot;\nab 1.699,00~ &quot;\nab 35,00 € mtl. / Dienstrad-Leasi~
-## 2     2 &quot;\nROOT MILLER\n&quot;  &quot;\nab 1.999,00~ &quot;\nab 41,50 € mtl. / Dienstrad-Leasi~
-## 3     3 &quot;\nPIKES PEAK\n&quot;   &quot;\nab 3.099,00~ &quot;\nab 64,00 € mtl. / Dienstrad-Leasi~
-## 4     4 &quot;\nTHE BRUCE\n&quot;    &quot;\n&quot;            &quot;\n&quot;                                 
-## 5     5 &quot;\nCOUNT SOLO\n&quot;   &quot;\n&quot;            &quot;\n&quot;                                 
-## 6     6 &quot;\nPSYCHO PATH\n&quot;  &quot;\nab 1.849,00~ &quot;\nab 38,50 € mtl. / Dienstrad-Leasi~
-## 7     7 &quot;\nTHRILL HILL\n&quot;  &quot;\nab 2.599,00~ &quot;\nab 54,00 € mtl. / Dienstrad-Leasi~
-## 8     8 &quot;\nTHRILL HILL TR~ &quot;\nab 2.899,00~ &quot;\nab 60,00 € mtl. / Dienstrad-Leasi~
-## 9     9 &quot;\nSOUL FIRE\n&quot;    &quot;\nab 2.149,00~ &quot;\nab 44,50 € mtl. / Dienstrad-Leasi~</code></pre>
+## 1     1 &quot;GROUND CONTROL~ &quot; 1.699,00~ &quot; 35,00 € mtl. / Dienstrad-Leasi~
+## 2     2 &quot;ROOT MILLER&quot;  &quot; 1.999,00~ &quot; 41,50 € mtl. / Dienstrad-Leasi~
+## 3     3 &quot;PIKES PEAK&quot;   &quot; 3.099,00~ &quot; 64,00 € mtl. / Dienstrad-Leasi~
+## 4     4 &quot;THE BRUCE&quot;    &quot;&quot;            &quot;&quot;                                 
+## 5     5 &quot;COUNT SOLO&quot;   &quot;&quot;            &quot;&quot;                                 
+## 6     6 &quot;PSYCHO PATH&quot;  &quot;1.849,00~ &quot; 38,50 € mtl. / Dienstrad-Leasi~
+## 7     7 &quot;THRILL HILL&quot;  &quot;2.599,00~ &quot; 54,00 € mtl. / Dienstrad-Leasi~
+## 8     8 &quot;THRILL HILL TR~ &quot;2.899,00~ &quot; 60,00 € mtl. / Dienstrad-Leasi~
+## 9     9 &quot;SOUL FIRE&quot;    &quot;2.149,00~ &quot;44,50 € mtl. / Dienstrad-Leasi~</code></pre>
 </div>
 </div>
 
